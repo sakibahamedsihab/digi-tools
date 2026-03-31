@@ -9,6 +9,7 @@ function Main({
   purchasedId,
   carts,
   removeFromCart,
+  Checkout,
 }) {
   // console.log(activeTab);
   // console.log(dataList);
@@ -56,22 +57,31 @@ function Main({
       )}
       {activeTab === "cart" && (
         <div className=" flex flex-col gap-5 p-8 border border-base-300 rounded-lg mt-5">
-          <p>Your Cart</p>
           {carts.length === 0 ? (
             <p>Empty</p>
           ) : (
-            carts.map((cart) => (
-              <CartCard
-                key={cart.id}
-                cart={cart}
-                removeFromCart={removeFromCart}
-              />
-            ))
+            <>
+              <p className="text-2xl font-bold">Your Cart</p>
+              {carts.map((cart) => (
+                <CartCard
+                  key={cart.id}
+                  cart={cart}
+                  removeFromCart={removeFromCart}
+                  carts={carts}
+                />
+              ))}
+              <div className="flex justify-between">
+                <p className="text-sm">Total:</p>
+                <p className="text-2xl font-bold">${total}</p>
+              </div>
+              <button
+                onClick={Checkout}
+                className="btn btn-primary rounded-full"
+              >
+                Proceed to Checkout
+              </button>
+            </>
           )}
-          <div className="flex justify-between">
-            <p className="text-sm">Total:</p>
-            <p className="text-2xl font-bold">${total}</p>
-          </div>
         </div>
       )}
     </section>

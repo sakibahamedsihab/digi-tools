@@ -11,12 +11,20 @@ function App() {
   const [purchasedId, setPurchasedId] = useState([]);
 
   const removeFromCart = (id) => {
+    alert("removed from the cart");
     const updatedCards = carts.filter((card) => id != card.id);
     setCarts(updatedCards);
-    setPurchasedId(updatedCards);
+    setPurchasedId(updatedCards.map((c) => c.id));
   };
 
+  function Checkout() {
+    alert("Proceeding to checkout");
+    setCarts([]);
+    setPurchasedId([]);
+  }
+
   const handleCard = (card) => {
+    alert(`${card.name} added to cart`);
     console.log("clicked");
     console.log(card);
     if (!purchasedId.includes(card.id)) {
@@ -38,6 +46,7 @@ function App() {
         purchasedId={purchasedId}
         carts={carts}
         removeFromCart={removeFromCart}
+        Checkout={Checkout}
       />
     </>
   );

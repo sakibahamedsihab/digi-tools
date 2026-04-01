@@ -9,6 +9,8 @@ import dataList from "./components/data.json";
 import { useState } from "react";
 import GetStarted from "./components/GetStarted";
 import Pricing from "./components/Pricing";
+import Trial from "./components/Trial";
+import Footer from "./Footer";
 
 function App() {
   const [activeTab, setActiveTab] = useState("products");
@@ -56,6 +58,8 @@ function App() {
       />
       <GetStarted />
       <Pricing />
+      <Trial />
+      <Footer />
     </>
   );
 }

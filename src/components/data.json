@@ -41,7 +41,7 @@
     "period": "monthly",
     "tag": "Popular",
     "features": ["50+ automations", "API access", "Custom workflows"],
-    "icon": "https://img.icons8.com/color/96/automation.png"
+    "icon": "https://cdn-icons-png.flaticon.com/128/2103/2103800.png"
   },
   {
     "id": 5,
@@ -105,6 +105,6 @@
       "Vector file export",
       "Full commercial rights"
     ],
-    "icon": "https://img.icons8.com/color/96/sketch.png"
+    "icon": "https://cdn-icons-png.flaticon.com/128/2722/2722190.png"
   }
 ]

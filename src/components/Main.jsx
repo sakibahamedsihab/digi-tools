@@ -1,5 +1,6 @@
 import Card from "./Card";
 import CartCard from "./CartCard";
+import emptyCart from "../assets/empty.png";
 
 function Main({
   dataList,
@@ -13,6 +14,9 @@ function Main({
 }) {
   // console.log(activeTab);
   // console.log(dataList);
+  const getTabClass = (tab) => {
+    return `btn rounded-full border-none ${activeTab === tab ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-[#FFFFFF]" : ""}`;
+  };
 
   const total = carts.reduce((sum, item) => sum + item.price, 0);
   return (
@@ -23,23 +27,22 @@ function Main({
           Choose from our curated collection of premium digital products
           designed <br /> to boost your productivity and creativity.
         </p>
-        {/* name of each tab group should be unique */}
-        <div className="tabs tabs-box rounded-full">
-          <input
-            type="radio"
-            name="my_tabs_1"
-            className="tab rounded-full"
-            aria-label="Products"
-            onClick={() => setActiveTab("products")}
-            defaultChecked
-          />
-          <input
-            type="radio"
-            name="my_tabs_1"
-            className="tab rounded-full"
-            aria-label="Cart(2)"
-            onClick={() => setActiveTab("cart")}
-          />
+
+        <div className="border border-base-300 rounded-full p-1 my-5">
+          <span className="space-x-3">
+            <button
+              onClick={() => setActiveTab("products")}
+              className={getTabClass("products")}
+            >
+              Products
+            </button>
+            <button
+              onClick={() => setActiveTab("cart")}
+              className={getTabClass("cart")}
+            >
+              {purchasedId.length > 0 ? `Cart(${purchasedId.length})` : `Cart`}
+            </button>
+          </span>
         </div>
       </div>
 
@@ -58,7 +61,22 @@ function Main({
       {activeTab === "cart" && (
         <div className=" flex flex-col gap-5 p-8 border border-base-300 rounded-lg mt-5">
           {carts.length === 0 ? (
-            <p>Empty</p>
+            <div className="flex flex-col items-center justify-center text-center">
+              <img className="w-75" src={emptyCart} alt="Empy Cart" />
+              <p className="text-2xl font-bold text-gray-800">
+                Nothing here yet!
+              </p>
+              <p className="text-sm text-gray-400 mt-1">
+                Go to{" "}
+                <span
+                  onClick={() => setActiveTab("products")}
+                  className="text-purple-500 text-2xl font-semibold cursor-pointer"
+                >
+                  Products
+                </span>{" "}
+                and find your perfect tool.
+              </p>
+            </div>
           ) : (
             <>
               <p className="text-2xl font-bold">Your Cart</p>

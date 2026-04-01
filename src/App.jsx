@@ -1,9 +1,14 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import UserReview from "./UserReview";
 import Main from "./components/Main";
 import dataList from "./components/data.json";
 import { useState } from "react";
+import GetStarted from "./components/GetStarted";
+import Pricing from "./components/Pricing";
 
 function App() {
   const [activeTab, setActiveTab] = useState("products");
@@ -11,31 +16,32 @@ function App() {
   const [purchasedId, setPurchasedId] = useState([]);
 
   const removeFromCart = (id) => {
-    alert("removed from the cart");
+    toast.error("Removed from cart");
     const updatedCards = carts.filter((card) => id != card.id);
     setCarts(updatedCards);
     setPurchasedId(updatedCards.map((c) => c.id));
   };
 
   function Checkout() {
-    alert("Proceeding to checkout");
+    toast.info("Proceeding to checkout");
     setCarts([]);
     setPurchasedId([]);
   }
 
   const handleCard = (card) => {
-    alert(`${card.name} added to cart`);
     console.log("clicked");
     console.log(card);
     if (!purchasedId.includes(card.id)) {
       setCarts([...carts, card]);
       setPurchasedId([...purchasedId, card.id]);
+      toast.success(`${card.name} added to cart`);
     }
   };
 
   return (
     <>
-      <Navbar />
+      <ToastContainer />
+      <Navbar purchasedId={purchasedId} setActiveTab={setActiveTab} />
       <Banner />
       <UserReview />
       <Main
@@ -48,6 +54,8 @@ function App() {
         removeFromCart={removeFromCart}
         Checkout={Checkout}
       />
+      <GetStarted />
+      <Pricing />
     </>
   );
 }

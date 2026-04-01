@@ -1,16 +1,45 @@
-# React + Vite
+# 🛠️ DigiTools — Premium Digital Tools Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern digital products marketplace where you can browse, purchase, and manage premium AI tools, design assets, templates, and productivity software — all in one place.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [https://sakib-ahamed-sihab-digi-tools.netlify.app/](https://sakib-ahamed-sihab-digi-tools.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🖼️ Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![DigiTools Preview](./preview.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Technologies Used
+
+- ⚛️ **React** — Component-based UI & state management
+- 🎨 **Tailwind CSS** — Utility-first styling & layout
+- 🌼 **DaisyUI** — Prebuilt UI component library
+- 🔔 **React Toastify** — Toast notification system
+
+---
+
+## ✨ Features
+
+### 🛒 Smart Cart System
+
+Add products to your cart, remove individual items, and see a live running total. The cart count badge in the Navbar updates instantly with every action.
+
+### 🔔 Toast Notifications
+
+Every cart interaction — adding a product, removing one, or checking out — triggers a smooth, non-intrusive toast notification powered by React Toastify.
+
+### 🔄 Dynamic Tab Switching
+
+Seamlessly toggle between the Products grid and your Cart. The active tab is always visually highlighted and stays perfectly in sync even when switching via the Navbar cart icon.
+
+---
+
+## 👨‍💻 Author
+
+**Sakib Ahamed Sihab**
+
+- 🌐 [Live Project](https://sakib-ahamed-sihab-digi-tools.netlify.app/)
+- 💻 [GitHub](https://github.com/sakibahamedsihab)

@@ -1,17 +1,19 @@
 function Pricing() {
   return (
-    <section className="py-20 max-w-300 mx-auto">
+    <section className="py-20 max-w-300 mx-auto px-4 md:px-0">
       <div className="flex flex-col gap-10">
         <div className="text-center">
-          <h1 className="text-4xl font-bold">Simple, Transparent Pricing</h1>
+          <h1 className="text-2xl md:text-4xl font-bold">
+            Simple, Transparent Pricing
+          </h1>
           <p className="text-neutral/80">
             Choose the plan that fits your needs. Upgrade or downgrade anytime.
           </p>
         </div>
 
-        <div className="flex justify-between gap-10">
+        <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10">
           {/* card-1 */}
-          <div className="flex flex-col flex-1 gap-5 w-fit shadow-lg p-8 rounded-lg bg-[#F2F2F2]">
+          <div className="flex flex-col flex-1 gap-5 shadow-lg p-8 rounded-lg bg-[#F2F2F2]">
             <span>
               <h1 className="text-xl font-bold">Starter</h1>
               <p className="text-neutral/80">Perfect for getting started</p>
@@ -46,7 +48,7 @@ function Pricing() {
             </button>
           </div>
           {/* card-2 */}
-          <div className="flex flex-col flex-1 gap-5 w-fit shadow-lg p-8 rounded-lg relative bg-linear-to-br text-white from-[#4F39F6] to-[#9514FA]">
+          <div className="flex flex-col flex-1 gap-5 shadow-lg p-8 rounded-lg relative bg-linear-to-br text-white from-[#4F39F6] to-[#9514FA]">
             <span className="bg-[#FEF3C6] px-3 py-2 rounded-full w-fit absolute -top-5 left-30 shadow-md">
               <p className="text-[#BB4D00] font-semibold">Most Popular</p>
             </span>
@@ -93,7 +95,7 @@ function Pricing() {
             </button>
           </div>
           {/* card-3 */}
-          <div className="flex flex-col flex-1 gap-5 w-fit shadow-lg p-8 rounded-lg bg-[#F2F2F2]">
+          <div className="flex flex-col flex-1 gap-5 shadow-lg p-8 rounded-lg bg-[#F2F2F2]">
             <span>
               <h1 className="text-xl font-bold">Enterprise</h1>
               <p className="text-neutral/80">For teams and businesses</p>

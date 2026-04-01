@@ -21,9 +21,11 @@ function Main({
   const total = carts.reduce((sum, item) => sum + item.price, 0);
   return (
     <section className="max-w-300 mx-auto py-10">
-      <div className="flex flex-col justify-center gap-3 items-center text-center">
-        <h1 className="text-4xl font-bold">Premium Digital Tools</h1>
-        <p className="text-lg text-[#627382]">
+      <div className="flex flex-col justify-center gap-3 items-center text-center px-4 md:px-0">
+        <h1 className="text-2xl md:text-4xl font-bold">
+          Premium Digital Tools
+        </h1>
+        <p className="text-sm md:text-lg text-[#627382]">
           Choose from our curated collection of premium digital products
           designed <br /> to boost your productivity and creativity.
         </p>
@@ -47,7 +49,7 @@ function Main({
       </div>
 
       {activeTab === "products" && (
-        <div className="grid grid-cols-3 gap-8 py-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 py-5 px-4 md:px-0">
           {dataList.map((data) => (
             <Card
               key={data.id}
@@ -59,7 +61,7 @@ function Main({
         </div>
       )}
       {activeTab === "cart" && (
-        <div className=" flex flex-col gap-5 p-8 border border-base-300 rounded-lg mt-5">
+        <div className="flex flex-col gap-5 p-4 md:p-8 border border-base-300 rounded-lg mt-5 mx-4 md:mx-0">
           {carts.length === 0 ? (
             <div className="flex flex-col items-center justify-center text-center">
               <img className="w-75" src={emptyCart} alt="Empy Cart" />

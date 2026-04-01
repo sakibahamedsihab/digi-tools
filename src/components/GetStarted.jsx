@@ -4,14 +4,16 @@ import rocket from "../assets/rocket.png";
 
 function GetStarted() {
   return (
-    <section className="bg-base-200 p-10">
-      <div className="flex flex-col items-center justify-center text-center gap-2 max-w-300 mx-auto py-10">
-        <h1 className="text-4xl font-bold">Get Started in 3 Steps</h1>
-        <p className="text-neutral/60 text-sm">
+    <section className="bg-base-200 p-4 md:p-10">
+      <div className="flex flex-col items-center justify-center text-center gap-2 max-w-300 mx-auto py-10 px-4 md:px-0">
+        <h1 className="text-2xl md:text-4xl font-bold">
+          Get Started in 3 Steps
+        </h1>
+        <p className="text-neutral/60 text-xs md:text-sm">
           Start using premium digital tools in minutes, not hours.
         </p>
 
-        <div className="flex gap-8 my-10">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 my-10">
           {/* card-1 */}
           <div className="flex flex-col gap-3 items-center relative justify-center px-6 py-20 bg-white rounded-xl">
             <span className="w-10 h-10 bg-linear-to-r from-[#4F39F6] to-[#9514FA] flex items-center justify-center rounded-full absolute top-5 right-5 text-white font-bold">
